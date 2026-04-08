@@ -1,0 +1,88 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+<html>
+    <head>
+        <title>add_menu</title>
+        <style>
+            body{
+                background-color: rgb(100, 113, 200);
+            }
+            #rj{
+                margin-left:39%;
+                color:rgb(255, 255, 255);
+            }
+            .main{
+                width: 30%;
+                height: 60%;
+                border: 1px solid black;
+                margin-left: 31%;
+                background-origin: content-box;
+                background-color:blanchedalmond;
+                border-radius: 3px 3px;
+            }
+            .h{
+                margin-left: 33%;
+                margin-top: -8%;
+            }
+            .num{
+
+                margin-left: 6%;
+            }
+            #num{
+                width: 17%;
+                height: 8%;
+                margin-left: 62%;
+                margin-top: -11%;
+            }
+            .s1{
+                margin-left: 6%;
+                font-size: 20px;
+            }
+             .s2{
+                margin-left: 6%;
+                font-size: 20px;
+            }
+            .dish{
+                width: 60%;
+                height: 10%;
+            }
+            .price{
+                width: 60%;
+                height: 10%;
+            }
+            .submit{
+                width: 30%;
+                height: 10%;
+                border: 1px solid black;
+                background-color:aquamarine;
+                color:red;
+                margin-left:35%;
+                border-radius: 5px 5%;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="rj">Rj Restaurant</h1>
+        <form method="POST" action="{% url 'menu_check' %}" class="main"><br><br><br>
+        {% csrf_token %}
+            <h1 class="h">Add Dish</h1>
+            </div>
+            <h2 class="num">How many dish do you want to add</h2>
+            <h2 class="num">Please enter number</h2>
+            
+            <input type="number" placeholder="  Enter " name="number" id="num"><br><br>
+            
+           <b><span class="s1">Dish Name :-   </span><input type="text" name="dish" placeholder="   Enter your dish name"class="dish"></b><br><br>
+            <b><span class="s2">Price :-  </span><input type="number" name="price" placeholder="     Enter your price"class="price"></b><br><br>
+            <b><button type="submit" class="submit">Submit</button></b>
+            
+            
+            
+            
+        </form>
+    </body>
+</html>
+{% endblock %}

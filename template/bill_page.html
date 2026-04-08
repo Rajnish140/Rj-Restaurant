@@ -1,0 +1,33 @@
+{% extend "restaurant.html" %}
+{% block index %}
+{% load static %}
+
+<html >
+<head>
+    <title>Document</title>
+    <style>
+        #form{
+            width: 600px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form" method="POST" action{% url 'bill_page'%}>
+        {% csrf_token %}
+        Name<input type="text" placeholder="Enter you user name" name="user" value="">
+        Phone no<input type="number" placeholder="Enter your number " name="number" value="">
+        table_no<input type="number" placeholder="Enter your table_no" name="table_no" value="">
+    </form>
+    <!-- <div>
+        {% for x in bill_data %}
+        <p>{{x.dish_name}}</p>
+        <p>{{x.price}}</p>
+        <p>{{x.Number_of_plate}}</p>
+        {% endfor %}
+        <p>{{bill_data.order_time}}</p>
+    </div> -->
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+<html>
+<head>
+    <title>manager</title>
+    <style>
+        <!--.rj{
+            width: 100%;
+            height: 40px;
+            border: 1px solid black;
+            background-color: aquamarine;
+            color: blue;
+            text-align: center;
+            justify-content: center;
+            padding-top: 15px;
+            font-size: 24px;
+            margin-top: 20px;
+            border-radius: 3px 3px;
+        }-->
+        .main{
+            display: flex;
+            margin-top: 1px;
+            gap: 2px;
+            margin-top: 40px;
+        }
+        #m1,#m2,#m3{
+            width: 33%;
+            height: 60px;
+            border: 1px solid rgb(39, 13, 109);
+            background-color:  rgb(245, 148, 216);
+            color: red;
+            text-align: center;
+            margin: center;
+            justify-content: center;
+            margin-top: 1px;
+            font-size: 20px;
+        }
+        .main2{
+            display: flex;
+            margin-top: 1px;
+            gap: 2px;
+        }
+        #m21,#m22,#m23{
+            width: 33%;
+            height: 60px;
+            border: 1px solid rgb(39, 13, 109);
+            background-color:  rgb(245, 148, 216);
+            color: red;
+            text-align: center;
+            margin: center;
+            justify-content: center;
+            margin-top: 1px;
+            font-size: 20px;
+        }
+        .a1{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    line-height: 60px;   /* text vertical center */
+}
+
+    </style>
+</head>
+<body>
+    <!--<div class="rj">RJ Restaurant</div>-->
+    <div class="main">
+        <div id="m1"><a href="{% url 'add_menu' %}"class="a1">Add Menu</a></div>
+        <div id="m2"><a href="{% url 'show_menu' %}"class="a1">Show Menu</a></div>
+      
+        <div id="m2"><a href="{% url 'menu_update' %}"class="a1">Update Menu</a></div>
+
+    </div>
+    <div class="main2">
+        <div id="m21"><a href="{% url 'bill_page'%}"class="a1">Make Bill</a></div>
+        <div id="m22"><a href=""class="a1">Show Menu</a></div>
+        <div id="m22"><a href=""class="a1">Update Menu</a></div>
+    </div>
+</body>
+</html>
+{% endblock %}

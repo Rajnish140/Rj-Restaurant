@@ -1,0 +1,211 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        #table {
+            width: 80%;
+            margin-left: 8%;
+            margin-top: 2%;
+            background-color: rgb(228, 182, 182);
+            border-collapse: collapse;
+            border-radius: 4px 4px;
+        }
+        #h1 {
+            background-color: rgb(198, 224, 154);
+            color: blue;
+        }
+        th{
+            font-size: 25px;
+            font-weight: bold;
+            color: blue;
+        }
+        td{
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        #label {
+            margin-left: 87.1%;
+            border:1px solid white;
+            height: 40px;
+            width: 120px;
+        }
+        #order_by{
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+            background-color: rgb(90, 90, 228);
+            color: white;
+            font-weight: bold;
+            font-size: large;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .ccc {
+            width: 300px;
+            height: 350px;
+            border: 1px solid black;
+            background-color: rgb(241, 247, 245);
+            color: black;
+            margin-left:-650px;
+            box-sizing: border-box;
+            border-radius: 3px 3px;
+            margin-top: 50px;
+            position: fixed;
+            z-index: 1000;
+            box-shadow: 2px 2px 10px 3px black;
+        }
+        /* .blur {
+            filter: blur(5px);
+        } */
+        #order_rj{
+            margin-left:65px;
+            color: red;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #phone{
+            margin-left: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #input1{
+            width: 60%;
+            height: 35px;
+        }
+        #table_no{
+            margin-left: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #input2{
+            width: 60%;
+            height: 35px;
+            margin-left: 4px;
+        }
+        #f_order{
+            width: 140px;
+            height: 30px;
+            background-color: blue;
+            color:white;
+            margin-left: 75px;
+            border-radius: 5px 5px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #input3{
+            width: 60%;
+            height: 35px;
+            margin-left: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Container to show selected items -->
+<p id="order" style="margin-left: 7%; font-weight: bold;"></p>
+
+<!-- Container for dynamic Order button -->
+
+<form method="POST" action="{% url 'order' %}">
+    {% csrf_token %}
+    
+    <table id="table" onclick="hidetable()" >
+        <tr>
+            <th class="h1">Sr.no</th>
+            <th class="h1">Dish Name</th>
+            <th class="h1">Price</th>
+        </tr>
+
+        {% for x in members %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.dish_name }}</td>
+            <td>
+                {{ x.price }} RRR
+                <input class="num" name="check[]" type="checkbox" value="{{ x.id }}" onclick="replacebutton()">
+                <select class="dish_no" name="quantity[]">
+                    <option>0</option>
+                    <option >1</option>
+                    <option >2</option>
+                    <option >3</option>
+                    <option >4</option>
+                    <option >5</option>
+                    <option >6</option>
+                    <option >7</option>
+                </select>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'orderdata'%}">order data</a>
+    <div id="label"></div>
+
+<script>
+    let items = [];
+    function replacebutton() {
+        let checkboxes = document.querySelectorAll(".num");
+        let label = document.getElementById("label");
+        let anyChecked = false;
+        items = [];
+        for(let i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].checked) {
+                anyChecked = true;
+                items.push(checkboxes[i].value);
+            }
+        }
+        if(anyChecked) {
+            label.innerHTML = '<button id="order_by" type="button" onclick="ordershow()">Order</button>';
+        } else {
+            label.innerHTML = "";
+        }
+    }
+    function ordershow() {
+    document.getElementById("table").innerHTML="";
+    document.getElementById("label").innerHTML =
+        
+        "<div class='ccc'>" +
+        "<br><h2 id='order_rj'>Rj Restaurant</h2>"+
+        "<br><label id='phone'>Name </label><input type='text'  placeholder='     Enter your name' name='customer' id='input3'>"+
+        "<br><br><label id='phone'>Phone no </label><input type='number'placeholder='Enter your number' name='mo_number' id='input1'>" +
+        "<br><br>" +
+        "<label id='table_no' style='background-color: rgb(241, 247, 245)'>Table no </label><input type='number' placeholder='Enter table no' name='table_no' id='input2'>" +
+        "<br><br>" +
+        "<button onclick='phone()' type='submit' id='f_order'>order</button>" +
+        "</div>";
+    // function hidetable(){
+        
+    // }
+    //hidetable();        
+    }
+    // function phone(){
+    //     let phone=document.getElementById("input3").value;
+    //     let name=document.getElementById("input1").value;
+    //     let table=document.getElementById("input2").value;
+    //     let a=
+    //     // if (phone.lenght!=10||name==""){
+        //     alert("phone number shoud be 10 digits")
+        // }
+        // else if (name==""){
+        //     alter("Please Enter name ")
+        // }
+        // else if (table.lenght<=1 && table.lenght>=2){
+        //     alert("Enter correct table number")
+        // }
+        // else{
+
+        // }
+            
+</script>
+</form>
+</body>
+</html>
+
+{% endblock %}

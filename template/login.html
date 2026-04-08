@@ -1,0 +1,74 @@
+{% extends 'restaurant.html' %}
+{% block 'index'%}
+{% load static %}
+<html>
+    <head>
+        <title>details</title>
+        <style>
+
+        body{
+            background-color: aqua;
+        }
+        .main{
+            width:360px;
+            height: 300px;
+            border:1px solid rgb(104, 91, 91);
+            margin-left: 35%;
+            margin-top: 7%;
+            border-radius: 4px 4px ;
+            background-color: aliceblue;
+            box-shadow: 2px 2px rgb(155, 190, 221);
+        }
+        .heading{
+            text-align: center;
+            margin-top: -4%;
+        }
+        #input1{
+            width:300px;
+            height: 38px;
+            margin-left: 25px;
+            background-color:white;
+            border:1px solid black;
+            border-radius: 3px 3px ;
+        }
+        
+        #input2{
+            width:300px;
+            height: 38px;
+            margin-left: 25px;
+            background-color: white;
+            border:1px solid black;
+            border-radius: 3px 3px ;
+        }
+        .l{
+            width: 300px;
+            height: 38px;
+            border:1px solid black;
+            border-radius: 3px 3px;
+            margin-left:25px;
+            border-radius: 3px;
+            background-color: rgb(51, 101, 196);
+            color:white;
+            font-size: 17px;
+            border-radius: 3px 3px ;
+
+        }
+        </style>
+    </head>
+    <body>
+       <form method="POST" action="{% url 'login_check' %}" class="main"><br><br><br>
+        {% csrf_token %}
+        <h2 class="heading">Login Page</h2>
+        <input  id="input1" type="text"  name="mobile" placeholder="   Enter mobile number    " >
+        
+        <br><br>
+        
+        <input id="input2" type="text" name="password" placeholder="    Enter your password    " ><br><br>
+        
+        <input  class="l" type="submit" value="Login">
+
+       </form>
+      
+    </body>
+</html>
+{% endblock %}

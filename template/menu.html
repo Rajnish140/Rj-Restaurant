@@ -1,0 +1,248 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+<html>
+    <head>
+        <title>Menu</title>
+       <style>
+        .rest{
+            width: 100%;
+            height: 70%;
+        }
+        .row1{
+            display: flex;
+            width: 96%;
+            height: 400px;
+            
+            gap:2%;
+            margin-top: 2%;
+            margin-left: 2%;
+        }
+        #r1{
+            width: 300px;
+            height: 420px;
+            border: 2px solid rgb(180, 174, 174);
+            background-color: rgb(235, 230, 230);
+            border-radius: 5px 5px;
+            box-shadow: 2px 4px 4px 2px  rgb(122, 66, 69);
+            
+        }
+        #r1:hover{
+            width: 305px;
+            height: 425px;
+            border: 2px solid rgb(180, 174, 174);
+            background-color: rgb(235, 230, 230);
+            border-radius: 5px 5px;
+            box-shadow: 2px 4px 4px 2px  rgb(122, 66, 69);
+            
+        }
+        #img1{
+            width: 295px;
+            height: 285px;
+            border: 1px solid gainsboro;
+            border-radius: 5px 5px;
+        }
+        #img1:hover{
+            width: 310px;
+            height: 300px;
+            border: 1px solid gainsboro;
+            border-radius: 5px 5px;
+        }
+        #button1{
+            width: 12%;
+            height: 10%;
+            border:1px solid rgb(173, 170, 170);
+            border-radius:50%;
+            margin-left:44%;
+            margin-top:-14%;
+            font-weight: bold;
+            background-color: brown;
+            color: white;
+        }
+        #avi{
+            width:50%;
+            height: 35px;
+            border: 1px solid rgb(167, 159, 159);
+            font-weight: bold;
+        }
+        #reserved{
+            width:50%;
+            height: 35px;
+            border: 1px solid rgb(167, 159, 159);
+            font-weight: bold;
+        }
+        #show{
+            width:96%;
+            height: 35px;
+            border :1px solid rgb(167, 159, 159);
+            background-color: #ffeaaa;
+            color: red;
+            font-weight: bold;
+            margin-left: 1.5%;
+            border-radius: 13px 13px;
+        }
+         #show:hover{
+            width:98%;
+            height: 40px;
+            border :1px solid rgb(167, 159, 159);
+            background-color: #540add;
+            color:white;
+            font-weight: bold;
+            margin-left: 1.5%;
+            border-radius: 13px 13px;
+        }
+        .row2{
+            display: flex;
+            width: 96%;
+            height: 400px;
+            
+            gap:2%;
+            margin-top: 3%;
+            margin-left: 2%;
+        }
+        </style>
+    </head>
+        <body>
+            <div class="restaurant_img">
+            <img src="{% static 'rest2.jpg' %}" class="rest">
+        </div>
+           
+            <div class="row1">
+                <div id="r1"><img src="{% static 'table4.png' %}" id="img1"><button id="button1" >1</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show" name="table_1" value="1">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table1.avif' %}" id="img1"><button id="button1">2</button>
+                <br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show" name="table_2" value="2">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table2.jpg' %}" id="img1"><button id="button1">3</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show" name="table_3" value="3">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table6.png' %}" id="img1"><button id="button1">4</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show" name="table_4" value="4">Show Menu / Show Dish</button></a></div>
+            </div>
+
+            <div class="row2">
+                <div id="r1"><img src="{% static 'table4.png' %}" id="img1"><button id="button1">5</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show" name="">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table1.avif' %}" id="img1"><button id="button1">6</button>
+                <br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table2.jpg' %}" id="img1"><button id="button1">7</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show">Show Menu / Show Dish</button></a></div>
+                <div id="r1"><img src="{% static 'table6.png' %}" id="img1"><button id="button1">8</button><br><br>
+                <button id="avi">Avilable</button><button id="reserved">Reserved</button><br><br>
+                <a href="{% url 'menu' %}"><button id="show">Show Menu / Show Dish</button></a></div>
+            </div>
+            
+            <footer class="footer1">
+	<table  align="center" width="100%" height="6%" style="color:blueviolet;margin-top:80px;background-color:rgb(220,210,200);">
+		<tr>
+	<td><h4>Quick Links</h4></td>
+	<td><h4>Apps</h4></td>
+	<td><h4>More</h4></td>
+	</tr>
+	<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@X</a></td>
+	<td><a href="dghgfgfj"style="text-decoration:none;color:gray">Android App</a></td>
+	<td><a href="https://upsc.gov.in/"style="text-decoration:none;color:gray"target="_blank">UPSC</a></td>
+	</tr>
+		<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@Telegram</a></td>
+	<td><a href="dghgfgfj"style="text-decoration:none;color:gray">IOS App</a></td>
+	<td><a href="https://upsssc.gov.in/"style="text-decoration:none;color:gray"target="_blank">UPSSSC</a></td>
+	</tr>
+	<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@Instagram</a></td>
+	<td><a href="dghgfgfj"></a></td>
+	<td><a href="https://ssc.gov.in/"style="text-decoration:none;color:gray"target="_blank">SSC</a></td>
+	</tr>
+	<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@Facebook</a></td>
+	<td><a href="dghgfgfj"></a></td>
+	<td><a href="https://www.bpsc.bih.nic.in/"style="text-decoration:none;color:gray"target="_blank">BPSC</a></td>
+	</tr>
+	<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@Youtube</a></td>
+	<td><a href="dghgfgfj"></a></td>
+	<td><a href="https://www.nta.ac.in/"style="text-decoration:none;color:gray"target="_blank">NTA</a></td>
+	</tr>
+		<tr>
+	<td><a href="wxfdgdgfhhgjh"style="text-decoration:none;color:gray">Sarkarisearch@Whatsapp</a></td>
+	<td><a href="dghgfgfj"style="text-decoration:none;color:gray"></a></td>
+	<td><a href="https://nielit.gov.in/"style="text-decoration:none;color:gray"target="_blank">NIELIT</a></td>
+	</tr>
+ </table>	
+</footer>
+        </body>
+    
+</html>
+{% endblock %}
+
+<!--
+class Order(models.Model):
+    dish = models.ForeignKey(Members, on_delete=models.CASCADE)
+    price = models.IntegerField()
+    ordered_at = models.DateTimeField(auto_now_add=True)
+
+
+    def menu(request):
+    if request.method == "POST":
+        selected_ids = request.POST.getlist('selected_items')
+
+        for item_id in selected_ids:
+            item = Members.objects.get(id=item_id)
+
+            Order.objects.create(
+                dish=item,
+                price=item.price
+            )
+
+    members = Members.objects.all()
+    return render(request, 'menu.html', {'members': members})
+
+
+    <form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Sr.no</td>
+            <td>Dish Name</td>
+            <td>Price</td>
+            <td>Select</td>
+        </tr>
+
+        {% for x in members %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.dish_name}}</td>
+            <td>{{x.price}}</td>
+            <td>
+                <input type="checkbox" name="selected_items" value="{{x.id}}" class="itemCheckbox">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button type="submit" id="orderBtn" style="display:none;">Order</button>
+</form>
+
+
+
+<script>
+    const checkboxes = document.querySelectorAll('.itemCheckbox');
+    const orderBtn = document.getElementById('orderBtn');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const anyChecked = [...checkboxes].some(cb => cb.checked);
+            orderBtn.style.display = anyChecked ? 'block' : 'none';
+        });
+    });
+</script>
+
+-->

@@ -1,0 +1,31 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>dish_name</td>
+            <td>price</td>
+            <td>Number of plate</td>
+        </tr>
+        {% for x in members %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.dish_name}}</td>
+            <td>{{x.price}}</td>
+            <td>{{x.Number_of_plate}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+
+<html>
+<head>
+    <title>Menu update</title>
+    <style>
+        body{
+            background-color: rgb(100, 231, 231);
+        }
+        .form{
+            border: 1px solid black;
+            width: 30%;
+            height:50%;
+            margin-left: 30%;
+            background-color: azure;
+            margin-top: 6%;
+            border-radius: 3px 3px;
+        }
+        span{
+            margin-left: 45px;
+            
+        }
+        #dish{
+            width: 70%;
+            height: 15%;
+            margin-left: 45px;
+            border-radius: 5px 5px;
+        }
+        #price{
+            width: 70%;
+            height:15%;
+            margin-left: 45px;
+            border-radius: 5px 5px;
+        }
+        .button1{
+            margin-left:35%;
+            border: 1px solid black;
+            width:30%;
+            height: 11%;
+            background-color: rgb(86, 50, 119);
+            color: white;
+            border-radius: 2px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="rj">Update</h1>
+    <form method="POST" action="{% url 'menu_id_update'%}" class="form">
+            {% csrf_token %}
+            <br><span><b>Id :- </b></span> 
+            <input type="text" name="id" placeholder="enter id" value="{{members.id}}"><br><br>
+            <span><b>Dish Name :-</b></span><br>
+            <input type="text" name="name" value="{{members.dish_name}}"placeholder="         Enter dish name" id="dish"><br><br>
+            <span><b>Dish Price :-</b></span><br>
+            <input type="text" name="price" value="{{members.price}}"placeholder="        Enter dish price" id="price"><br><br>
+
+            <button type="submit" class="button1" >update</button>
+            
+            
+        
+    </form>
+</body>
+</html> 
+{%endblock%}

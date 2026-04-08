@@ -1,0 +1,26 @@
+{% extends 'restaurant.html' %}
+{% block 'index' %}
+{% load static %}
+<html>
+    <head>
+        <title>Id</title>
+        <link rel="stylesheet" href="{% static 'css/c_id.css' %}">
+    </head>
+    <body>
+        <form  method="POST" action="{% url 'myform' %}">
+            {% csrf_token %}
+            <div class="main">
+            <h1 class="name">Rj Restaurant</h1>
+            <div class="main2">
+            <lable>F_Name :-<input type="text" name="fname" placeholder="      Enter your name     " class="name2"><br><br>
+            <lable>Last Name :-<input type="text" name="lname" placeholder="      Enter your number     "class="mobile"><br><br>
+            <lable>Mobile No :-<input type="password" name="mobile" placeholder="    Enter your password   "class="password"><br><br>
+            <lable>Password :-<input type="password" name="password" placeholder="     Conform Password   " class="c_password"><br><br>
+            <button type="submit"  class="register">Register</button>
+            <a href="{% url 'login_page' %}"><span class="Login">Login</span></a>
+            </div>
+            </div>
+        </form>
+    </body>
+</html>
+{% endblock %}

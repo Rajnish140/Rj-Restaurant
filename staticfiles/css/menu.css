@@ -1,0 +1,16 @@
+table{
+    border: 1px solid black;
+    width: 80%;
+    height:600px;
+    background-color: rgb(236, 233, 228);
+    margin-left:15%;
+}
+h1{
+    background-color: rgb(122 133 211);
+    color: blue;
+}
+td{
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+}

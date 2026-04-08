@@ -1,0 +1,50 @@
+.main{
+                width: 30%;
+                height: 60%;
+                border: 1px solid black;
+                margin-left: 25%;
+                background-origin: content-box;
+                background-color:blanchedalmond;
+                
+            }
+            .h{
+                margin-left: 33%;
+                margin-top: -8%;
+            }
+            .num{
+
+                margin-left: 6%;
+            }
+            #num{
+                width: 17%;
+                height: 8%;
+                margin-left: 62%;
+                margin-top: -11%;
+            }
+            .s1{
+                margin-left: 6%;
+                font-size: 20px;
+            }
+             .s2{
+                margin-left: 6%;
+                font-size: 20px;
+            }
+            .dish{
+                width: 60%;
+                height: 10%;
+            }
+            .price{
+                width: 60%;
+                height: 10%;
+            }
+            .submit{
+                width: 30%;
+                height: 10%;
+                border: 1px solid black;
+                background-color:rgb(127, 127, 223);
+                color:white;
+                margin-left:35%;
+                border-radius: 2px 2px;
+            }
+
+        

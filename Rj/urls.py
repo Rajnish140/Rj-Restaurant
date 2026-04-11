@@ -41,7 +41,7 @@ urlpatterns = [
     path('order/',views.order,name="order"),
     path('orderdata/',views.orderdata,name="orderdata"),
     path('bill_p/',views.bill_page,name="bill_page"),
-    path('contect/',views.contect,name="contect"),
+    path('contact/',views.contact,name="contact"),
     path('admin/', admin.site.urls),
    # path('', include('user.urls')),
     #path('manager2/', include('manager.urls')),

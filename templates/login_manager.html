@@ -1,11 +1,8 @@
 {% extends 'restaurant.html' %}
 {% block 'index' %}
 {% load static %}
-<html>
-    <head>
-        <title>details</title>
-        <style>
 
+    <style>
         body{
             background-color: aqua;
         }
@@ -53,9 +50,8 @@
             border-radius: 3px 3px ;
 
         }
-        </style>
-    </head>
-    <body>
+     </style>
+    
        <form method="POST" action="{% url 'login2_check' %}" class="main"><br><br><br>
         {% csrf_token %}
         <h2 class="heading">Login Page</h2>
@@ -69,7 +65,5 @@
 
        </form>
       
-    </body>
-</html>
 
 {% endblock %}

@@ -35,21 +35,21 @@ def datasave(request):
         x.save()
 
         #return redirect("/")
-def register_p(request):
-    return render(request,"register.html")
+# def register_p(request):
+#     return render(request,"register.html")
 
-def register_save(request):
-    if request.method == "POST":
-        fname=request.POST.get('fname')
-        lname = request.POST.get('lname')
-        mobile = request.POST.get('mobile')
-        password = request.POST.get('password')
+# def register_save(request):
+#     if request.method == "POST":
+#         fname=request.POST.get('fname')
+#         lname = request.POST.get('lname')
+#         mobile = request.POST.get('mobile')
+#         password = request.POST.get('password')
 
-        x=User.objects.create_user(first_name=fname,last_name=lname,username=mobile)
-        x.set_password(password)
-        x.save()
-        return HttpResponse("success")
-    return redirect('/')
+#         x=User.objects.create_user(first_name=fname,last_name=lname,username=mobile)
+#         x.set_password(password)
+#         x.save()
+#         return HttpResponse("success")
+#     return redirect('/')
 def login_page(request):
     return render(request,"login_manager.html")
 def login22(request):

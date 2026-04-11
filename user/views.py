@@ -241,4 +241,4 @@ def bill_page(request):
 
         return HttpResponse(template.render(context,request))
 def contact(request):
-    return render("contact")
+    return HttpResponse("contact")

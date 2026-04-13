@@ -1,88 +1,38 @@
-
-
-/* Hero Section */
-.hero {
-    background:  #feb47b;
-    color: white;
+.hero{
+    width: 100%;
+    height: fit-content;
+    background-color: #ffafef;
+}
+.hero h1{
+    color:white;
+    font-variation-settings: calc();
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
-    padding: 60px 20px;
-}
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 
-.hero h1 {
-    margin: 0;
-    font-size: 40px;
 }
-
-.hero p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-}
-
-/* Box Section */
-.box {
-    background: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.box h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-/* Features Grid */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
-
-/* Feature Cards */
-.card {
-    background: #fafafa;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    transition: 0.3s;
-    border: 1px solid #eee;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    margin: 10px 0;
-}
-
-/* Why Choose Us */
-.why ul {
-    list-style: none;
-    padding: 0;
-}
-
-.why ul li {
-    padding: 8px 0;
+.hero p{
+    color: darkslateblue;
     font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+    width: 100%;
+    height: auto;
+    background-color: aliceblue;
+    box-shadow: #ffafef;
+
+}
+.box{
+    margin-left: 15px;
+
 }
 
-/* Footer */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}

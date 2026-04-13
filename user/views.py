@@ -246,4 +246,4 @@ def contact(request):
 def about_us(request):
     return render(request, "about_us.html")
 def gallery(request):
-    return render(request,"gallery.html")
+    return HttpResponse("gallery")

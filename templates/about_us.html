@@ -6,25 +6,23 @@
     <style>
         .hero{
     width: 100%;
-    height: fit-content;
-    background-color: #ffafef;
+    height: 150px;
+    background-color: #e6a33e;
 }
-.hero h1{
+#h1{
     color:white;
-    font-variation-settings: calc();
-    font-size: 22px;
+    font-size: 40px;
     font-weight: bold;
+    padding-top: 20px;
     text-align: center;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-
 }
 .hero p{
     color: darkslateblue;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+    margin-top: 1px;
+    padding-top: -20px;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -33,13 +31,34 @@
 .container{
     width: 100%;
     height: auto;
-    background-color: aliceblue;
-    box-shadow: #ffafef;
+    background-color: rgb(218, 237, 253);
+    box-shadow: #ca75b9;
 
 }
 .box{
-    margin-left: 15px;
+    
+    background-color:rgb(228, 207, 177);
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
 
+}
+.features{
+    display:flex;
+    align-items: center;
+    gap: 115px;
+    padding-right: 1px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(121,123,211,0.4);
+    margin-top: 10px;
+}
+.footer{
+    background-color: rgb(141, 177, 209);
+    box-shadow: 2px 4px 2px black;
+    margin-left: 30px;
+    padding-left:20px;
+    border-radius: 2px 4px 2px 4px;
 }
 
 
@@ -47,7 +66,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1>About Our Smart Restaurant</h1>
+        <h1 id="h1">About Our Smart Restaurant</h1>
         <p>Making dining faster, smarter, and more convenient</p>
     </div>
 
@@ -82,17 +101,19 @@
                     <h3>🍽️ Smart Ordering</h3>
                     <p>Order your favorite food directly from your seat with ease.</p>
                 </div>
-
+            </div>
+            <div class="features">
                 <div class="card">
                     <h3>⚡ Fast Service</h3>
                     <p>Orders instantly reach the manager/kitchen for quick preparation.</p>
                 </div>
-
+            
                 <div class="card">
                     <h3>💳 Online Payment</h3>
                     <p>Pay your bill securely without waiting for billing staff.</p>
                 </div>
-
+            </div>
+            <div class="features">
                 <div class="card">
                     <h3>⭐ Ratings</h3>
                     <p>Give feedback and ratings to improve service quality.</p>
@@ -134,11 +155,11 @@
         </div>
 
     </div>
-    <div>Rajnish Test</div>
+    <div class="footer"><h2>Rajnish Test</h2>
 
     <!-- Footer -->
-    <div class="footer">
+    <div >
         <p>© 2026 Smart Restaurant | All Rights Reserved</p>
     </div>
-
+    </div>
 {% endblock %}

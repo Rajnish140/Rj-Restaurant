@@ -3,51 +3,26 @@
 {% block index %}
 
 <style>
-.gallery-title{
-    text-align: center;
-    margin: 20px 0;
-    font-size: 32px;
+.galler_title{
+    font-size: large;
     font-weight: bold;
+    align-items: center;
+    text-decoration: center;
 }
-
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    width: 90%;
-    margin: auto;
-}
-
-/* Card */
-.card{
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-5px);
-}
-
-.card img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card p{
-    padding: 10px;
-    font-size: 14px;
-    text-align: center;
-}
-
 .section-title{
-    width: 90%;
-    margin: 20px auto 10px;
-    font-size: 22px;
-    font-weight: bold;
+    color: red;
+    align-items: center;
+    text-align: center;
+
+}
+.gallery{
+    display: flex;
+    gap: 10px;
+}
+.card{
+    background-color: beige;
+    box-shadow: 2px 4px 2px 4px black;
+    border-radius:2px 4px 2px 4px;
 }
 
 @media (max-width: 768px){

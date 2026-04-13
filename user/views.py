@@ -244,4 +244,4 @@ def bill_page(request):
 def contact(request):
     return render(request, "contact.html")
 def about_us(request):
-    return render(request, "about_us.html")
+    return render(request, "contact.html")

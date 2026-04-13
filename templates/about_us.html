@@ -36,7 +36,148 @@
 
 }
 .box{
-    
+    {% extends 'restaurant.html' %}
+{% load static %}
+{% block index %}
+
+<style>
+.gallery-title{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+/* Card */
+.card{
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.section-title{
+    width: 90%;
+    margin: 20px auto 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px){
+    .card img{
+        height: 150px;
+    }
+}
+</style>
+
+<h1 class="gallery-title">Our Gallery</h1>
+
+<!-- Restaurant Section -->
+<h2 class="section-title">Restaurant Experience</h2>
+<div class="gallery">
+
+    <div class="card">
+        <img src="{% static 'images/res1.jpg' %}">
+        <p>Beautiful dining area designed for comfort and a premium experience.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res2.jpg' %}">
+        <p>Modern table setup with a clean and elegant look.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res3.jpg' %}">
+        <p>Delicious food presentation that enhances your appetite.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res4.jpg' %}">
+        <p>Warm lighting ambiance creating a relaxing dining environment.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res5.jpg' %}">
+        <p>Spacious seating arrangement for families and groups.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res6.jpg' %}">
+        <p>Freshly prepared meals served with quality and hygiene.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res7.jpg' %}">
+        <p>Attractive interior design that gives a modern touch.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/res8.jpg' %}">
+        <p>A complete smart restaurant experience with comfort and technology.</p>
+    </div>
+
+</div>
+
+<!-- Project Section -->
+<h2 class="section-title">My Project</h2>
+<div class="gallery">
+
+    <div class="card">
+        <img src="{% static 'images/pro1.jpg' %}">
+        <p>This is the homepage of my Smart Restaurant website showing basic details and navigation.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/pro2.jpg' %}">
+        <p>Menu page where customers can explore dishes and select items easily.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/pro3.jpg' %}">
+        <p>Order system where customers can place orders directly without waiting for a waiter.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/pro4.jpg' %}">
+        <p>Order management panel where manager receives and processes orders quickly.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/pro5.jpg' %}">
+        <p>
+            Developed by <strong>Rajnish</strong>, a BCA final year student. 
+            This project focuses on making restaurant services faster, smarter, and fully digital.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
     background-color:rgb(228, 207, 177);
     padding-left: 5%;
     padding-top: 2%;

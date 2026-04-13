@@ -43,6 +43,7 @@ urlpatterns = [
     path('bill_p/',views.bill_page,name="bill_page"),
     path('contact/',views.contact,name="contact"),
     path('about/',views.about_us,name="about_us"),
+    path('gallery/',views.gallery,name="gallery"),
     path('admin/', admin.site.urls),
    # path('', include('user.urls')),
     #path('manager2/', include('manager.urls')),

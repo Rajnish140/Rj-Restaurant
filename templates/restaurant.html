@@ -294,8 +294,8 @@
             <div><img src="{% static 'rest.jpg' %}" class="logoimg"></div>
             <div><h1 class="rj_name" >RJ. RESTAURANT</h1></div>
             <div><input type="text" placeholder="      Search me.........?      " class="search_input"></div>
-            <div><a href="" class="contect">Contect Us</a></div>
-            <div class=""><a href="#" class="gallery">Gallery</a></div>
+            <div><a href="{% url 'contact' %}" class="contect">Contect Us</a></div>
+            <div class=""><a href="{% url 'gallery' %}" class="gallery">Gallery</a></div>
             <div class=""><a href=""class="help">Help</a></div>
             <div ><img src="{% static 'rest.jpg' %}" class="loginimg2"></div>
         </div>

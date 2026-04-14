@@ -186,6 +186,23 @@
             transition: cubic-bezier(0.19, 222, 0.22, 1);
             
         }
+        .owner{
+            width:50%;
+            height:50%;
+            margin-left:25%;
+            margin-top: 4%;
+            border-radius: 40%;
+            animation: rotate360 2s linear infinite;
+        }
+
+        @keyframes rotate360 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
 
         .footer{
@@ -442,7 +459,7 @@
         </div>
 
         <div class="art">
-            <div id="sundari"><img src="{% static 'owner.jpg'%}" style="width:40%;height:60%;margin-left:25%;margin-top: 4%;border-radius: 40%;"></div>
+            <div id="sundari"><img src="{% static 'owner.jpg'%}" class="owner"></div>
             <div style="margin-left:10%"><h2>Rj-Restaurant is a Django-based web application designed to manage an online restaurant system. <br>
                 It allows users to browse menus, place orders, and interact with the restaurant digitally. </h2>
                 <ul>1. 🍽️ About the Restaurant

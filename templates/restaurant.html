@@ -174,103 +174,113 @@
         @media (max-width: 768px){
 
     /* HEADER */
-            .he{
-                flex-direction: column;
-                align-items: center;
-                padding: 10px;
-                gap: 10px;
-            }
-        
-            .logoimg{
-                margin-left: 0;
-                width: 40px;
-                height: 40px;
-            }
-        
-            .rj_name{
-                font-size: 20px;
-                margin: 0;
-                text-align: center;
-            }
-        
-            .search_input{
-                width: 90%;
-                margin: 0;
-                height: 35px;
-            }
-        
-            .contect,
-            .gallery,
-            .help{
-                font-size: 15px;
-                margin: 5px;
-            }
-        
-            .loginimg2{
-                width: 35px;
-                height: 35px;
-                margin: 0;
-            }
-        
-            /* NAVBAR */
-            .navbar{
-                justify-content: center;
-                padding: 10px;
-                gap: 10px;
-            }
-        
-            .nav1{
-                font-size: 15px;
-                margin: 0;
-            }
-        
-            /* REST SECTION */
-            .rest{
-                height: auto;
-            }
-        
-            .rest2,
-            .rest3{
-                flex-direction: column;
-                align-items: center;
-                margin: 10px 0;
-                padding: 10px;
-                gap: 15px;
-            }
-        
-            #d1,
-            #d2{
-                width: 90%;
-                height: auto;
-            }
-        
-            .re1img,
-            .re12img,
-            .re2img{
-                width: 100%;
-                height: auto;
-                max-height: 200px;
-                object-fit: cover;
-            }
-        
-            /* hover disable */
-            .rest2:hover,
-            .rest3:hover{
-                height: auto;
-                background-color: rgb(243,245,243);
-            }
-        
-            .re1img:hover,
-            .re12img:hover,
-            .re2img:hover{
-                height: auto;
-            }
-        
-            #rupees{
-                margin: 0;
-                text-align: left;
-            }
-        }
+    .he{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+        height: auto;
+    }
+
+    .logoimg{
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .rj_name{
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .search_input{
+        width: 90%;
+        margin: 0;
+        height: 35px;
+    }
+
+    .contect,
+    .gallery,
+    .help{
+        font-size: 15px;
+        margin: 5px;
+    }
+
+    .loginimg2{
+        width: 35px;
+        height: 35px;
+        margin: 0;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .nav1{
+        font-size: 15px;
+        margin: 0;
+        padding: 5px 8px;
+    }
+
+    /* REST SECTION */
+    .rest{
+        height: auto;
+    }
+
+    .rest2,
+    .rest3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+        padding: 10px;
+        gap: 15px;
+        height: auto;
+    }
+
+    #d1,
+    #d2{
+        width: 90%;
+        height: auto;
+    }
+
+    .re1img,
+    .re12img,
+    .re2img{
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    /* hover disable (mobile ke liye) */
+    .rest2:hover,
+    .rest3:hover{
+        height: auto;
+        background-color: rgb(243,245,243);
+    }
+
+    .re1img:hover,
+    .re12img:hover,
+    .re2img:hover{
+        height: auto;
+    }
+
+    #rupees{
+        margin: 0;
+        text-align: left;
+        display: block;
+    }
+}
         
         </style>
         

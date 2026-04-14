@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
         .he{
         border:1px solid black ;
@@ -170,15 +171,14 @@
         #time{
             color: red;
         }
+        @media (max-width: 768px){
 
-        @media (max-width: 768px) {
-
+    /* HEADER */
             .he{
-                flex-wrap: wrap;
-                height: auto;
+                flex-direction: column;
+                align-items: center;
                 padding: 10px;
                 gap: 10px;
-                justify-content: center;
             }
         
             .logoimg{
@@ -188,106 +188,90 @@
             }
         
             .rj_name{
-                font-size: 22px;
-                margin-left: 0;
-                margin-top: 5px;
+                font-size: 20px;
+                margin: 0;
                 text-align: center;
-                width: 100%;
             }
         
             .search_input{
                 width: 90%;
-                margin-left: 0;
+                margin: 0;
                 height: 35px;
             }
         
             .contect,
             .gallery,
             .help{
-                font-size: 16px;
-                margin-left: 10px;
-                margin-top: 5px;
+                font-size: 15px;
+                margin: 5px;
             }
         
             .loginimg2{
-                width: 40px;
-                height: 40px;
-                margin-left: 0;
+                width: 35px;
+                height: 35px;
+                margin: 0;
             }
-        }
-        @media (max-width: 768px) {
-
+        
+            /* NAVBAR */
             .navbar{
-                flex-wrap: wrap;           /* line break allow */
-                justify-content: center;   /* center align */
+                justify-content: center;
+                padding: 10px;
+                gap: 10px;
+            }
+        
+            .nav1{
+                font-size: 15px;
+                margin: 0;
+            }
+        
+            /* REST SECTION */
+            .rest{
                 height: auto;
+            }
+        
+            .rest2,
+            .rest3{
+                flex-direction: column;
+                align-items: center;
+                margin: 10px 0;
                 padding: 10px;
                 gap: 15px;
             }
         
-            .nav1{
-                font-size: 16px;
-                margin-left: 0;            /* important */
-                margin-top: 5px;
-                padding: 5px 10px;
+            #d1,
+            #d2{
+                width: 90%;
+                height: auto;
             }
         
-        }
-    
-        @media (max-width: 768px) {
-
-                .rest{
-                    height: auto;
-
-                }
-            
-                .rest2,
-                .rest3{
-                    flex-direction: column;   /* side → vertical */
-                    height: auto;
-                    margin-left: 0;
-                    margin-top: 10px;
-                    gap: 15px;
-                    padding: 10px;
-                    margin-top: 6%;
-                }
-            
-                /* hover effect mobile me disable (kyunki mobile me hover nahi hota) */
-                .rest2:hover,
-                .rest3:hover{
-                    height: auto;
-                    background-color: rgb(243, 245, 243);
-                }
-            
-                #d1,
-                #d2{
-                    width: 100%;
-                    height: auto;
-                }
-            
-                .re1img,
-                .re12img,
-                .re2img{
-                    height: auto;
-                    max-height: 200px;
-                    object-fit: cover;
-                }
-            
-                /* hover zoom hatao mobile me */
-                .re1img:hover,
-                .re12img:hover,
-                .re2img:hover{
-                    height: auto;
-                }
-            
-                #rupees{
-                    margin-left: 0;
-                    display: block;
-                    text-align: left;
-                }
-            
+            .re1img,
+            .re12img,
+            .re2img{
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                object-fit: cover;
             }
-
+        
+            /* hover disable */
+            .rest2:hover,
+            .rest3:hover{
+                height: auto;
+                background-color: rgb(243,245,243);
+            }
+        
+            .re1img:hover,
+            .re12img:hover,
+            .re2img:hover{
+                height: auto;
+            }
+        
+            #rupees{
+                margin: 0;
+                text-align: left;
+            }
+        }
+        
         </style>
         
     </head>

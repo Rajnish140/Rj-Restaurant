@@ -160,7 +160,7 @@ def show_menu(request):
     return HttpResponse(template.render(context,request))
 
 def show_menu2(request):
-    db=Menu.objects.filter(dish_name__icontains='Butter').values()
+    db=Menu.objects.values()
     template=loader.get_template("show_menu.html")
 
     context={

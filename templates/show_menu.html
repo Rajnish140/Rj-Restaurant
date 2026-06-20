@@ -44,6 +44,7 @@
             font-size: large;
             border-radius: 4px;
             cursor: pointer;
+            
         }
         .ccc {
             width: 300px;
@@ -177,7 +178,7 @@
 
 <form method="POST" action="{% url 'order' %}">
     {% csrf_token %}
-    
+    <div id="label"></div>
     <table id="table" onclick="hidetable()" >
         <tr>
             <th class="h1">Sr.no</th>
@@ -207,7 +208,7 @@
         {% endfor %}
     </table>
     <a href="{% url 'orderdata'%}">order data</a>
-    <div id="label"></div>
+    
 
 <script>
     let items = [];

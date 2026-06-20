@@ -224,6 +224,13 @@ def orderdata(request):
     }
 
     return HttpResponse(template.render(context,request))
+def customer_details(request):
+    if request.method=="POST":
+        user=request.POST['customer']
+        number=request.POST['mo_number']
+        table_no=request.POST['table_no']
+        customer_db=Customer(user=user,number=number,table_no=table_no)
+        customer_db.save()
 def bill_page(request):
     if request.method=="POST":
         user=request.POST['user']

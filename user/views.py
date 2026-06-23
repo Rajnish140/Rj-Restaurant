@@ -204,10 +204,10 @@ def order(request):
             for x in (d):
                 print(x)
                 
-                data1 = Order(dish_name=x['dish_name'], price=x['price'],Number_of_plate=li1)
+                data1 = Order.objects.create(dish_name=x['dish_name'], price=x['price'],Number_of_plate=li1)
                 
             data1.save()
-        cs_data=Customer(name=customer,phone=phone,table_no=table_no)
+        cs_data=Customer.objects.create(name=customer,phone=phone,table_no=table_no)
         cs_data.save()
         context={
             'order_data':"Success"

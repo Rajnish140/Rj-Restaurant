@@ -8,7 +8,13 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.dish_name
+class Customer(models.Model):
+    name=models.CharField(max_length=255)
+    phone=models.ImageField(max_length=10)
+    table_no=models.IntegerField()
 
+    def __str__(self):
+        return self.name
     
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.CASCADE, null=True)
@@ -18,15 +24,6 @@ class Order(models.Model):
     order_time = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):
         return self.dish_name
-    
-class Customer(models.Model):
-    name=models.CharField(max_length=255)
-    phone=models.ImageField(max_length=10)
-    table_no=models.IntegerField()
-
-    def __str__(self):
-        return self.name
-
 # Create your models here.
 #class Manager(models.Model):
 #    name=models.CharField(max_length=255,default="")

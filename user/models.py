@@ -10,7 +10,7 @@ class Menu(models.Model):
         return self.dish_name
 class Customer(models.Model):
     name=models.CharField(max_length=255)
-    phone=models.ImageField(max_length=10)
+    phone=models.CharField(max_length=10)
     table_no=models.IntegerField()
 
     def __str__(self):

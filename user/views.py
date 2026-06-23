@@ -206,7 +206,7 @@ def order(request):
                 
                 data1 = Order(dish_name=x['dish_name'], price=x['price'],Number_of_plate=li1)
                 
-                data1.save()
+            data1.save()
         cs_data=Customer(name=customer,phone=phone,table_no=table_no)
         cs_data.save()
         context={
@@ -225,12 +225,14 @@ def orderdata(request):
 
     return HttpResponse(template.render(context,request))
 def customer_details(request):
-    if request.method=="POST":
-        user=request.POST['customer']
-        number=request.POST['mo_number']
-        table_no=request.POST['table_no']
-        customer_db=Customer(user=user,number=number,table_no=table_no)
-        customer_db.save()
+    customer_d=Customer.objects.all().values()
+    
+    template=loader.get_template("bill_page.html")
+    context={
+        'customer_db':customer_d
+    }
+    return HttpResponse(template.render(context,request))
+
 def bill_page(request):
     if request.method=="POST":
         user=request.POST['user']
@@ -240,14 +242,14 @@ def bill_page(request):
         # db=Customer.object.get(name=user,phone=number,table_no=table_no)
         # order=Order.object.filter(customer=db)
 
-        template=loader.get_template("bill_page.html")
-
-        context={
-            'bill_data':"success"
-        }
-
-        return HttpResponse(template.render(context,request))
-    
+        #template=loader.get_template("bill_page.html")
+#
+        #context={
+        #    'bill_data':"success"
+        #}
+#
+        #return HttpResponse(template.render(context,request))
+    #
 def contact(request):
     return render(request, "contact.html")
 def about_us(request):

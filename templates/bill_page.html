@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <form id="form" method="POST" action{% url 'bill_page'%}>
+    <form id="form" method="POST" action="{% url 'bill_page' %}">
         {% csrf_token %}
         Name<input type="text" placeholder="Enter you user name" name="user" value="">
         Phone no<input type="number" placeholder="Enter your number " name="number" value="">

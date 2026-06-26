@@ -170,51 +170,47 @@ def show_menu2(request):
     return HttpResponse(template.render(context,request))
 
 def order(request):
-    d=[]
-    d1=[]
+
     if request.method == "POST":
-        checkboxes = request.POST.getlist('check[]')
-        quantity = request.POST.getlist('quantity[]')
-        customer = request.POST['customer']
-        phone = request.POST['mo_number']
-        table_no = request.POST['table_no']
 
-         # all selected IDs
-         # corresponding quantity
-        
+        checkboxes = request.POST.getlist("check[]")
+        quantity = request.POST.getlist("quantity[]")
 
-        print(quantity)
-        list1=[]
-        for ch2 in quantity:
-            if ch2=="0":
-                pass 
-            else:
-                ch3=int(ch2)
-                list1.append(ch3)
-        for ch1,li1 in zip(checkboxes,list1):
-            data = Menu.objects.filter(id=ch1)
-            d = data.values()
-            dd=list(d)
-            
-            
-            print(list1)
-            len_of_list1=len(list1)
-            print(dd)
+        customer = request.POST.get("customer")
+        phone = request.POST.get("mo_number")
+        table_no = request.POST.get("table_no")
 
-            for x in (d):
-                print(x)
-                
-                data1 = Order.objects.create(dish_name=x['dish_name'], price=x['price'],Number_of_plate=li1)
-                
-            data1.save()
-        cs_data=Customer.objects.create(name=customer,phone=phone,table_no=table_no)
-        cs_data.save()
-        context={
-            'order_data':"Success"
-            
-        }
+        print("Checkbox :", checkboxes)
+        print("Quantity :", quantity)
 
-        return HttpResponse(context['order_data'])
+        list1 = []
+
+        for q in quantity:
+            if q != "0":
+                list1.append(int(q))
+
+        print(list1)
+
+        for ch1, li1 in zip(checkboxes, list1):
+
+            menu = Menu.objects.get(id=ch1)
+
+            data1 = Order.objects.create(
+                dish_name=menu.dish_name,
+                price=menu.price,
+                Number_of_plate=li1
+            )
+
+            Customer.objects.create(
+                order=data1,
+                name=customer,
+                phone=phone,
+                table_no=table_no
+            )
+
+        return HttpResponse("Order Saved Successfully")
+
+    return HttpResponse("Invalid Request")
 def orderdata(request):
     db=Order.objects.all().values()
     template=loader.get_template("orderdata.html")

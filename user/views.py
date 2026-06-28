@@ -221,20 +221,28 @@ def orderdata(request):
 
     return HttpResponse(template.render(context,request))
 def customer_details(request):
+
     customer_d=Customer.objects.all().values()
-    #customer = Customer.objects.get(name="Rajnish")
-    #Order.objects.filter(customer=customer)
+    for m in customer_d:
+        for key,values in m.items():
+            if key=="name":
+                print(values)
+                st=values
+                print(st)
+    customer = Customer.objects.get(name=st)
+    Order.objects.filter(customer=customer)
+    print("HELLO")
     template=loader.get_template("bill_page.html")
     context={
         'customer_db':customer_d
     }
     return HttpResponse(template.render(context,request))
 
-def bill_page(request):
-    if request.method=="POST":
-        user=request.POST['user']
-        number=request.POST['number']
-        table_no=request.POST['table_no']
+#def bill_page(request):
+#    if request.method=="POST":
+#        user=request.POST['user']
+#        number=request.POST['number']
+#        table_no=request.POST['table_no']
 
         # db=Customer.object.get(name=user,phone=number,table_no=table_no)
         # order=Order.object.filter(customer=db)

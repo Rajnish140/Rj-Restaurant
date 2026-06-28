@@ -29,9 +29,9 @@
             <td>{{x.phone}}</td>
             <td>{{x.table_no}}</td>
         </tr>
-        {{% endfor %}}
+        {% endfor %}
     </table>
-    <form id="form" method="POST" action="{% url 'bill_page' %}">
+    <form id="form" method="POST" action="{% url 'customer_data' %}">
         {% csrf_token %}
         Name<input type="text" placeholder="Enter you user name" name="user" value="">
         Phone no<input type="number" placeholder="Enter your number " name="number" value="">
@@ -47,3 +47,4 @@
     </div> -->
 </body>
 </html>
+{% endblock %}

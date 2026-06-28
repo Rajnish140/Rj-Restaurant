@@ -222,7 +222,8 @@ def orderdata(request):
     return HttpResponse(template.render(context,request))
 def customer_details(request):
     customer_d=Customer.objects.all().values()
-    
+    #customer = Customer.objects.get(name="Rajnish")
+    #Order.objects.filter(customer=customer)
     template=loader.get_template("bill_page.html")
     context={
         'customer_db':customer_d

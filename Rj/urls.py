@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from user import views
-from user.models import Menu
+from user.models import Menu,Customer,Order
 from django.conf import settings       # 👈 ye add karo
 from django.conf.urls.static import static 
 urlpatterns = [

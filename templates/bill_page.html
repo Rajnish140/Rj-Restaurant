@@ -15,6 +15,20 @@
 
 </head>
 <body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Mobile Number</td>
+            <td>Table No</td>
+            
+        </tr>
+        {for x in customer_db} 
+        <tr>
+            <td>x.name</td>
+            <td>x.phone</td>
+            <td>x.table_no</td>
+        </tr>
+    </table>
     <form id="form" method="POST" action="{% url 'bill_page' %}">
         {% csrf_token %}
         Name<input type="text" placeholder="Enter you user name" name="user" value="">

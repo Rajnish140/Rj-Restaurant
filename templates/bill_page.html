@@ -23,12 +23,13 @@
             <td>Table No</td>
             
         </tr>
-        {for x in customer_db} 
+        {% for x in customer_db %} 
         <tr>
-            <td>x.name</td>
-            <td>x.phone</td>
-            <td>x.table_no</td>
+            <td>{{x.name}}</td>
+            <td>{{x.phone}}</td>
+            <td>{{x.table_no}}</td>
         </tr>
+        {{% endfor %}}
     </table>
     <form id="form" method="POST" action="{% url 'bill_page' %}">
         {% csrf_token %}

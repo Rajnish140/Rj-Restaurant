@@ -229,8 +229,8 @@ def customer_details(request):
                 print(values)
                 st=values
                 print(st)
-    customer = Customer.objects.get(name=st)
-    Order.objects.filter(customer=customer)
+    #customer = Customer.objects.get(name=st)
+    #Order.objects.filter(customer=customer)
     print("HELLO")
     template=loader.get_template("bill_page.html")
     context={

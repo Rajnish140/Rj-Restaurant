@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login
 from .models import *
 from django.template import loader
 from django.http import HttpResponse
-from user.models import Menu
+from user.models import Menu,Customer,Order
 
 def index(request):
     return render(request,"restaurant.html")
